@@ -45,15 +45,14 @@ import time
     5. 복원을 위해 백업할 파일을 선택한 문자열을 저장할 변수
     6. 
 '''
-# 사용자 입력값을 저장하기 위한 리스트
-target_folder_list = []
 
-# input 값을 source에 받는다.
-source = raw_input("Input your file path: \n");
+def get_file_path_input():
+    source = raw_input("Input your file path: \n")  # input 값을 source에 받는다.
+    target_folder_list = []  # 사용자 입력값을 저장하기 위한 리스트
 
-def write_into_file(source):
     if not os.path.exists(source):
         print "FILE PATH INPUT ERROR : please input existing file\n"
+
     else:
         # user_input.txt 파일을 추가하기 모드로 연 뒤, 입력한 파일 경로를 추가한다.
         print "Appending your input file-paht into user_input.txt"
@@ -61,7 +60,15 @@ def write_into_file(source):
         f.write(source)
         target_folder_list = list(f.readlines())
         print "Loading..."
-        f.close()        
+        f.close()     
+    return source, target_folder_list
+
+user_input = []
+
+user_input = get_file_path_input()
+source = user_input[0]
+target_folder_list = user_input[1]
+
 
 
 
