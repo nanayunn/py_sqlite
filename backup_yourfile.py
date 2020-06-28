@@ -55,7 +55,7 @@ def get_file_path_input():
 
     else:
         # user_input.txt 파일을 추가하기 모드로 연 뒤, 입력한 파일 경로를 추가한다.
-        print "Appending your input file-paht into user_input.txt"
+        print "Appending your input file-pa into user_input.txt"
         f = open('/home/nykim/user_input.txt', mode= 'at+')
         f.write(source)
         target_folder_list = list(f.readlines())
